@@ -47,3 +47,8 @@ logs/
 Thumbs.db
 
 # Properties files
+# Virtual environment
+venv/
+
+# Allure report
+allure-report/
