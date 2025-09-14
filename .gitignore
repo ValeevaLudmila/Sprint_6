@@ -35,3 +35,8 @@ Thumbs.db
 .settings/
 .todo
 *.properties
+# Virtual environment
+venv/
+
+# Allure report
+allure-report/
