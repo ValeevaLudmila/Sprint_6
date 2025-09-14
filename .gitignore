@@ -1,0 +1,54 @@
+# Compiled sources
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.tar.gz
+*.rar
+*.o
+*.pyc
+
+# Dependencies
+node_modules/
+
+# Build outputs
+gradle/
+build/
+bin/
+out/
+target/
+dist/
+
+# IDE
+*.iml
+.idea/
+.vscode/
+.classpath
+.project
+.settings/
+
+# Logs and temp files
+*.log
+*.tmp
+*.lock
+*.temp
+logs/
+*.swp
+*.swo
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Properties files
+# Virtual environment
+venv/
+
+# Allure report
+allure-report/
