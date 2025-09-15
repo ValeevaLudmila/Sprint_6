@@ -1,0 +1,12 @@
+2025-09-13 21:11:07,411 - INFO - Инициализация драйвера Firefox
+2025-09-13 21:11:07,411 - INFO - ====== WebDriver manager ======
+2025-09-13 21:11:08,014 - INFO - Driver [C:\Users\Ludmila\.wdm\drivers\geckodriver\win64\v0.33.0\geckodriver.exe] found in cache
+2025-09-13 21:11:12,746 - INFO - Драйвер успешно инициализирован
+2025-09-13 21:11:12,748 - INFO - Открытие страницы: https://qa-scooter.praktikum-services.ru/
+2025-09-13 21:11:17,808 - INFO - Драйвер готов к использованию
+2025-09-13 21:11:17,809 - INFO - Starting FAQ test for question 2
+2025-09-13 21:11:17,809 - INFO - Waiting for FAQ section to be visible
+2025-09-13 21:11:17,826 - INFO - Scrolling to FAQ section
+2025-09-13 21:11:17,837 - INFO - Clicking on FAQ question 2
+2025-09-13 21:11:17,940 - INFO - FAQ test for question 2 passed
+2025-09-13 21:11:17,942 - INFO - Завершение работы драйвера
