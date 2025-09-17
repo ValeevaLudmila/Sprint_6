@@ -1,3 +1,4 @@
+# main_page_locators.py
 from selenium.webdriver.common.by import By
 
 class MainPageLocators:
@@ -38,3 +39,4 @@ class MainPageLocators:
     ORDER_BUTTON_IN_HEADER = (By.XPATH, "//button[contains(@class, 'Button_Button__ra12g') and text()='Заказать']")
     ORDER_BUTTON_IN_HEADER_ALT = (By.XPATH, "//div[contains(@class, 'Header_Nav')]//button[text()='Заказать']")
     ANY_ORDER_BUTTON = (By.XPATH, "//button[text()='Заказать']")
+    title_dzen = (By.XPATH, "//title[contains(text(), 'Дзен')]")

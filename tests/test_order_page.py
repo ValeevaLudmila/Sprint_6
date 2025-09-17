@@ -2,19 +2,18 @@ import sys
 import os
 import allure
 import pytest
+from urls import Urls
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 from pages.main_page import MainPage
 from pages.order_page import OrderPage
 from data import TestData
-from selenium.webdriver.common.by import By
-from locators.order_page_locators import OrderPageLocators
 
 class TestOrderPositive:
     # Позитивные тесты создания заказа.
 
     @allure.feature('Создание заказа')
-    @allure.story('Успешное создание заказа через кнопку в хедере')
+    @allure.title('Успешное создание заказа через кнопку в хедере')
     @allure.severity(allure.severity_level.BLOCKER)
     def test_create_order_via_header_button(self, driver):
         
@@ -39,7 +38,7 @@ class TestOrderPositive:
             )
 
     @allure.feature('Создание заказа')
-    @allure.story('Успешное создание заказа через кнопку в основном разделе')
+    @allure.title('Успешное создание заказа через кнопку в основном разделе')
     @allure.severity(allure.severity_level.BLOCKER)
     def test_create_order_via_main_button(self, driver):
         
@@ -64,7 +63,7 @@ class TestOrderPositive:
             )
 
     @allure.feature('Создание заказа')
-    @allure.story('Создание заказа с разными способами выбора даты')
+    @allure.title('Создание заказа с разными способами выбора даты')
     @allure.severity(allure.severity_level.NORMAL)
     def test_create_order_with_different_date_selection_methods(self, driver):
         
@@ -94,7 +93,7 @@ class TestOrderPositive:
 class TestOrderNavigation:
     
     @allure.feature('Навигация')
-    @allure.story('Возврат к первой форме после заполнения')
+    @allure.title('Возврат к первой форме после заполнения')
     @allure.severity(allure.severity_level.MINOR)
     def test_navigation_between_forms(self, driver):
         
@@ -105,8 +104,7 @@ class TestOrderNavigation:
             main_page.click_header_order_button()
         
         with allure.step('Проверить отображение первой формы'):
-        # Используем метод из order_page вместо self
-            assert order_page.is_element_present(OrderPageLocators.title_page_personal), 'Первая форма заказа не отображается'
+            assert order_page.is_first_form_displayed(), 'Первая форма заказа не отображается'
 
 
 @pytest.mark.parametrize(
@@ -121,7 +119,7 @@ class TestOrderParametrized:
     # Параметризованные тесты создания заказа.
 
     @allure.feature('Создание заказа')
-    @allure.story('Параметризованное тестирование с разными пользователями')
+    @allure.title('Параметризованное тестирование с разными пользователями')
     def test_create_order_with_different_users(self, driver, user_data, test_description):
         
         main_page = MainPage(driver)
