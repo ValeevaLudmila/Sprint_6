@@ -1,7 +1,6 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
-from webdriver_manager.firefox import GeckoDriverManager
 from data import TestData
 import logging
 
@@ -15,7 +14,13 @@ def driver():
     logger.info("Инициализация драйвера Firefox")
     
     try:
-        service = Service(GeckoDriverManager(version="v0.33.0").install())
+        # Явный путь к уже скачанному драйверу
+        gecko_path = r'C:\Users\Ludmila\.wdm\drivers\geckodriver\win64\v0.33.0\geckodriver.exe'
+        
+        # Создаем сервис с явным путем к драйверу
+        service = Service(executable_path=gecko_path)
+        
+        # Инициализируем драйвер с сервисом
         driver = webdriver.Firefox(service=service)
         logger.info("Драйвер успешно инициализирован")
         
@@ -33,4 +38,5 @@ def driver():
         raise
     finally:
         logger.info("Завершение работы драйвера")
-        driver.quit()
+        if 'driver' in locals() and driver:
+            driver.quit()

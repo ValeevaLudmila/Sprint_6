@@ -10,7 +10,6 @@ from pages.order_page import OrderPage
 from data import TestData
 
 class TestOrderPositive:
-    # Позитивные тесты создания заказа.
 
     @allure.feature('Создание заказа')
     @allure.title('Успешное создание заказа через кнопку в хедере')
@@ -20,18 +19,15 @@ class TestOrderPositive:
         main_page = MainPage(driver)
         order_page = OrderPage(driver)
         
-        # Шаг 1: Нажать кнопку «Заказать» в хедере
         with allure.step('Нажать кнопку "Заказать" в хедере'):
             main_page.click_header_order_button()
         
-        # Шаг 2: Заполнить форму заказа
         with allure.step('Заполнить первую форму "Для кого самокат"'):
             order_page.data_entry_first_form(TestData.test_data_user1)
         
         with allure.step('Заполнить вторую форму "Про аренду"'):
             order_page.data_entry_second_form(TestData.test_data_user1)
         
-        # Шаг 3: Проверить успешное создание заказа
         with allure.step('Проверить отображение кнопки "Посмотреть статус"'):
             assert order_page.check_displaying_of_button_check_status_of_order(), (
                 'Кнопка "Посмотреть статус" не отображается после создания заказа'
@@ -45,18 +41,15 @@ class TestOrderPositive:
         main_page = MainPage(driver)
         order_page = OrderPage(driver)
         
-        # Шаг 1: Нажать кнопку «Заказать» в основном разделе
         with allure.step('Нажать кнопку "Заказать" в основном разделе'):
             main_page.click_main_order_button()
-        
-        # Шаг 2: Заполнить форму заказа
+
         with allure.step('Заполнить первую форму "Для кого самокат"'):
             order_page.data_entry_first_form(TestData.test_data_user2)
         
         with allure.step('Заполнить вторую форму "Про аренду"'):
             order_page.data_entry_second_form(TestData.test_data_user2)
         
-        # Шаг 3: Проверить успешное создание заказа
         with allure.step('Проверить отображение кнопки "Посмотреть статус"'):
             assert order_page.check_displaying_of_button_check_status_of_order(), (
                 'Кнопка "Посмотреть статус" не отображается после создания заказа'
@@ -76,9 +69,7 @@ class TestOrderPositive:
         with allure.step('Заполнить первую форму "Для кого самокат"'):
             order_page.data_entry_first_form(TestData.test_data_user1)
         
-        # Проверка разных способов выбора даты (если нужно)
         with allure.step('Проверить ввод даты с клавиатуры'):
-            # Этот шаг можно пропустить или адаптировать под конкретные требования
             pass
         
         with allure.step('Заполнить вторую форму "Про аренду"'):
@@ -116,7 +107,6 @@ class TestOrderNavigation:
     ids=['user_1', 'user_2']
 )
 class TestOrderParametrized:
-    # Параметризованные тесты создания заказа.
 
     @allure.feature('Создание заказа')
     @allure.title('Параметризованное тестирование с разными пользователями')
