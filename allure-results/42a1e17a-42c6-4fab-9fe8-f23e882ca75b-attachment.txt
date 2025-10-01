@@ -1,0 +1,10 @@
+2025-10-01 14:17:20,518 - INFO - Инициализация драйвера Firefox
+2025-10-01 14:17:20,518 - INFO - Используется драйвер из системного PATH
+2025-10-01 14:17:25,294 - INFO - Драйвер успешно инициализирован
+2025-10-01 14:17:29,381 - INFO - Драйвер готов к использованию
+2025-10-01 14:17:29,381 - INFO - Starting FAQ test for question 1
+2025-10-01 14:17:29,381 - INFO - Waiting for FAQ section to be visible
+2025-10-01 14:17:29,405 - INFO - Scrolling to FAQ section
+2025-10-01 14:17:29,405 - INFO - Clicking on FAQ question 1
+2025-10-01 14:17:29,537 - INFO - FAQ test for question 1 passed
+2025-10-01 14:17:29,537 - INFO - Завершение работы драйвера

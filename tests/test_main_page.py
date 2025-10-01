@@ -14,6 +14,7 @@ from data import TestData
 from urls import Urls
 from pages.order_page import OrderPage
 
+
 class TestMainPage:
     # Тесты главной страницы сервиса Самокат.
 
@@ -59,6 +60,7 @@ class TestMainPage:
     @allure.feature('Навигация')
     @allure.title('Переход на страницу заказа через кнопку в хедере')
     def test_header_order_button_redirects_to_order_page(self, driver):
+        """Проверяет переход на страницу заказа через кнопку в хедере."""
         main_page = MainPage(driver)
         order_page = OrderPage(driver)
 
@@ -71,6 +73,7 @@ class TestMainPage:
     @allure.feature('Навигация')
     @allure.title('Переход на страницу заказа через кнопку в основном разделе')
     def test_main_order_button_redirects_to_order_page(self, driver):
+        """Проверяет переход на страницу заказа через основную кнопку."""
         main_page = MainPage(driver)
         order_page = OrderPage(driver)
         
@@ -83,6 +86,7 @@ class TestMainPage:
     @allure.feature('Навигация')
     @allure.title('Редирект на главную страницу при клике на логотип Самоката')
     def test_scooter_logo_redirects_to_main_page(self, driver):
+        """Проверяет редирект на главную страницу при клике на логотип."""
         main_page = MainPage(driver)
         
         # Переходим на другую страницу для теста редиректа
@@ -99,6 +103,7 @@ class TestMainPage:
     @allure.feature('Навигация')
     @allure.title('Открытие Дзена в новой вкладке при клике на логотип Яндекса')
     def test_yandex_logo_opens_dzen_in_new_tab(self, driver):
+        """Проверяет открытие Дзена в новой вкладке."""
         main_page = MainPage(driver)
         
         original_tab = main_page.get_original_tab()
@@ -125,6 +130,7 @@ class TestMainPage:
     @allure.feature('Валидация')
     @allure.title('Проверка отображения основных элементов страницы')
     def test_main_page_elements_are_displayed(self, driver):
+        """Проверяет отображение основных элементов главной страницы."""
         main_page = MainPage(driver)
     
         assert main_page.is_header_displayed(), 'Главный заголовок не отображается'
@@ -136,8 +142,13 @@ class TestMainPage:
     @allure.feature('Валидация')
     @allure.title('Проверка кликабельности кнопок заказа')
     def test_order_buttons_are_clickable(self, driver):
+        """Проверяет кликабельность кнопок заказа."""
         main_page = MainPage(driver)
         
-        assert main_page.is_header_order_button_clickable(), 'Кнопка заказа в хедере не кликабельна'
+        assert main_page.is_header_order_button_clickable(), (
+            'Кнопка заказа в хедере не кликабельна'
+        )
         
-        assert main_page.is_main_order_button_clickable(), 'Кнопка заказа в основном разделе не кликабельна'
+        assert main_page.is_main_order_button_clickable(), (
+            'Кнопка заказа в основном разделе не кликабельна'
+        )

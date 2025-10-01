@@ -1,7 +1,0 @@
-[32mINFO    [0m conftest:conftest.py:15 Инициализация драйвера Firefox
-[32mINFO    [0m WDM:logger.py:11 ====== WebDriver manager ======
-[32mINFO    [0m WDM:logger.py:11 Driver [C:\Users\Ludmila\.wdm\drivers\geckodriver\win64\v0.33.0\geckodriver.exe] found in cache
-[32mINFO    [0m conftest:conftest.py:20 Драйвер успешно инициализирован
-[32mINFO    [0m conftest:conftest.py:24 Открытие страницы: https://qa-scooter.praktikum-services.ru/
-[32mINFO    [0m conftest:conftest.py:28 Драйвер готов к использованию
-[32mINFO    [0m conftest:conftest.py:35 Завершение работы драйвера

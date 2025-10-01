@@ -1,33 +1,38 @@
 import pytest
+import os
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
-from data import TestData
+from urls import Urls
 import logging
 
-# Настройка логирования
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+def get_driver_service():
+    gecko_path = os.getenv('GECKODRIVER_PATH')
+    
+    if gecko_path and os.path.exists(gecko_path):
+        logger.info(f"Используется драйвер из GECKODRIVER_PATH: {gecko_path}")
+        return Service(executable_path=gecko_path)
+    else:
+        if gecko_path:
+            logger.warning(f"Указанный GECKODRIVER_PATH не существует: {gecko_path}")
+        logger.info("Используется драйвер из системного PATH")
+        return Service()
+
 @pytest.fixture()
 def driver():
-    """Фикстура для инициализации и закрытия драйвера."""
     logger.info("Инициализация драйвера Firefox")
     
+    driver = None
     try:
-        # Явный путь к уже скачанному драйверу
-        gecko_path = r'C:\Users\Ludmila\.wdm\drivers\geckodriver\win64\v0.33.0\geckodriver.exe'
-        
-        # Создаем сервис с явным путем к драйверу
-        service = Service(executable_path=gecko_path)
-        
-        # Инициализируем драйвер с сервисом
+        service = get_driver_service()
         driver = webdriver.Firefox(service=service)
+        
         logger.info("Драйвер успешно инициализирован")
         
         driver.implicitly_wait(10)
-        
-        logger.info(f"Открытие страницы: {TestData.scooter_address}")
-        driver.get(TestData.scooter_address)
+        driver.get(Urls.SCOOTER_MAIN)
         driver.maximize_window()
         
         logger.info("Драйвер готов к использованию")
@@ -38,5 +43,5 @@ def driver():
         raise
     finally:
         logger.info("Завершение работы драйвера")
-        if 'driver' in locals() and driver:
+        if driver:
             driver.quit()

@@ -1,9 +1,0 @@
-2025-09-13 21:13:04,439 - INFO - Инициализация драйвера Firefox
-2025-09-13 21:13:04,439 - INFO - ====== WebDriver manager ======
-2025-09-13 21:13:05,046 - INFO - Driver [C:\Users\Ludmila\.wdm\drivers\geckodriver\win64\v0.33.0\geckodriver.exe] found in cache
-2025-09-13 21:13:09,838 - INFO - Драйвер успешно инициализирован
-2025-09-13 21:13:09,840 - INFO - Открытие страницы: https://qa-scooter.praktikum-services.ru/
-2025-09-13 21:13:12,701 - INFO - Драйвер готов к использованию
-2025-09-13 21:13:12,703 - INFO - Clicking on Yandex logo
-2025-09-13 21:13:14,299 - INFO - Yandex logo test passed
-2025-09-13 21:13:14,319 - INFO - Завершение работы драйвера
