@@ -17,7 +17,11 @@ git checkout develop1
 
 
 
-## 🚀 Sprint_6 — UI Automation Testing with Allure
+
+
+---
+
+# 🚀 Sprint_6 — UI Automation Testing with Allure
 
 Автоматизация веб-сервиса **Stellar Burgers** с использованием Selenium, pytest и Allure.
 Тесты покрывают главную страницу, FAQ, навигацию, оформление заказа и проверку редиректов.
